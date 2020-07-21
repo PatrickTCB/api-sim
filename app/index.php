@@ -51,7 +51,7 @@
             <?php
               $headers =  getallheaders();
               foreach($headers as $key=>$value){
-                echo "<li class=\"overflow-wrap: anywhere;\">", $key, ' = ', $value, "</li>";
+                echo "<li>", $key, ' = ', $value, "</li>";
               }
             ?>
             </ul>
