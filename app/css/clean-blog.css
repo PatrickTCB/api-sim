@@ -407,3 +407,22 @@ footer .copyright {
   font-size: 16px;
   padding: 25px 35px;
 }
+
+pre {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: scroll;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #f8f9fa !important;
+  background-color: #6c757d !important;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
