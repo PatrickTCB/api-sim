@@ -73,12 +73,12 @@
                 $getparams = TRUE;
                 echo "<li>", $key, ' = ', $value, "</li>";
                 $getparamsjson = $getparamsjson . "{\"name\":\"" . $key . "\",\"values\": [\"" . $value . "\"]},";
-                $getparamsjsonpretty = $getparamsjsonpretty . "\t\t{\n\t\t\t\"name\":\"" . $key . "\",\n\t\t\t\"values\": [\n\t\t\t\t\"" . $value . "\"\n\t\t\t]\n\t\t},\n";
+                $getparamsjsonpretty = $getparamsjsonpretty . "&emsp;&emsp;{\n&emsp;&emsp;&emsp;\"name\":\"" . $key . "\",\n&emsp;&emsp;&emsp;\"values\": [\n&emsp;&emsp;&emsp;&emsp;\"" . $value . "\"\n&emsp;&emsp;&emsp;]\n&emsp;&emsp;},\n";
               }
               echo "</ul>";
               if ($getparams == TRUE){
                 $scenario = "{\"url\": \"" . $actual_link . "\",\"method\": \"GET\",\"parameters\": [" . rtrim($getparamsjson, ",") . "]}";
-                $prettyscenario = "{\n\t\"url\": \"" . $actual_link . "\",\n\t\"method\": \"GET\",\n\t\"parameters\": [\n" . rtrim($getparamsjsonpretty, ",") . "\n\t]\n}";
+                $prettyscenario = "{\n&emsp;\"url\": \"" . $actual_link . "\",\n&emsp;\"method\": \"GET\",\n&emsp;\"parameters\": [\n" . rtrim($getparamsjsonpretty, ",") . "\n&emsp;]\n}";
                 echo "<p>JSON representation of URL data<br /><pre class=\".code-card\">", $prettyscenario, "</pre></p>";
                 echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", base64url_encode($scenario), "</span></p>";
               }
@@ -94,11 +94,11 @@
                 $postparams = TRUE;
                 echo "<li>", $key, ' = ', $value, "</li>";
                 $postparamsjson = $postparamsjson . "{\"name\":\"" . $key . "\",\"values\": [\"" . $value . "\"]},";
-                $postparamsjsonpretty = $postparamsjsonpretty . "\t\t{\n\t\t\t\"name\":\"" . $key . "\",\n\t\t\t\"values\": [\n\t\t\t\t\"" . $value . "\"\n\t\t\t]\n\t\t},\n";
+                $postparamsjsonpretty = $postparamsjsonpretty . "&emsp;&emsp;{\n&emsp;&emsp;&emsp;\"name\":\"" . $key . "\",\n&emsp;&emsp;&emsp;\"values\": [\n&emsp;&emsp;&emsp;&emsp;\"" . $value . "\"\n&emsp;&emsp;&emsp;]\n&emsp;&emsp;},\n";
               }
               if ($postparams == TRUE){
                 $scenario = "{\"url\": \"" . $actual_link . "\",\"method\": \"GET\",\"parameters\": [" . rtrim($postparamsjson, ",") . "]}";
-                $prettyscenario = "{\n\t\"url\": \"" . $actual_link . "\",\n\t\"method\": \"GET\",\n\t\"parameters\": [\n" . rtrim($postparamsjsonpretty, ",") . "\n\t]\n}";
+                $prettyscenario = "{\n&emsp;\"url\": \"" . $actual_link . "\",\n&emsp;\"method\": \"GET\",\n&emsp;\"parameters\": [\n" . rtrim($postparamsjsonpretty, ",") . "\n&emsp;]\n}";
                 echo "<p>JSON representation of URL data<br /><pre class=\".code-card\">", $prettyscenario, "</pre></p>";
                 echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", base64url_encode($scenario), "</span></p>";
               }
