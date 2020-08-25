@@ -97,7 +97,7 @@
                 $postparamsjsonpretty = $postparamsjsonpretty . "&emsp;&emsp;{\n&emsp;&emsp;&emsp;\"name\":\"" . $key . "\",\n&emsp;&emsp;&emsp;\"values\": [\n&emsp;&emsp;&emsp;&emsp;\"" . $value . "\"\n&emsp;&emsp;&emsp;]\n&emsp;&emsp;},\n";
               }
               if ($postparams == TRUE){
-                $scenario = "{\"url\": \"" . $actual_link . "\",\"method\": \"GET\",\"parameters\": [" . rtrim($postparamsjson, ",") . "]}";
+                $scenario = "{\"url\": \"" . $actual_link . "\",\"method\": \"POST\",\"parameters\": [" . rtrim($postparamsjson, ",") . "]}";
                 $prettyscenario = "{\n&emsp;\"url\": \"" . $actual_link . "\",\n&emsp;\"method\": \"GET\",\n&emsp;\"parameters\": [\n" . rtrim($postparamsjsonpretty, ",") . "\n&emsp;]\n}";
                 echo "<p>JSON representation of URL data<br /><pre class=\".code-card\">", $prettyscenario, "</pre></p>";
                 echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", base64url_encode($scenario), "</span></p>";
