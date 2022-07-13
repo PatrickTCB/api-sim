@@ -58,7 +58,9 @@
             <?php
               $headers =  getallheaders();
               foreach($headers as $key=>$value){
-                echo "<li>", $key, ' = ', $value, "</li>";
+                if ($key != "cookie"){
+                  echo "<li>", $key, ' = ', $value, "</li>";
+                }
               }
             ?>
             </ul>
