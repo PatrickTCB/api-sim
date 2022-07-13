@@ -63,6 +63,16 @@
             ?>
             </ul>
           </p>
+          <p>Cookie Info:<br />
+            <ul>
+              <?php
+                foreach ($_COOKIE as $key=>$val)
+                  {
+                    echo '<li>'.$key.' = '.$val.'</li>\n';
+                  }
+              ?>
+            </ul>
+          </p>
           <p>GET Parameters Received:<br />
             <ul>
             <?php
@@ -81,7 +91,10 @@
                 $prettyscenario = "{\n&emsp;\"url\": \"" . $actual_link . "\",\n&emsp;\"method\": \"GET\",\n&emsp;\"parameters\": [\n" . rtrim(rtrim($getparamsjsonpretty, "\n"), ",") . "\n&emsp;]\n}";
                 echo "<p>JSON representation of URL data<br /><pre class=\".code-card\">", $prettyscenario, "</pre></p>";
                 $b64scenario = base64url_encode($scenario);
-                echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", str_pad($b64scenario,(count_chars($b64scenario) % 4),"=",STR_PAD_RIGHT), "</span></p>";
+                $b64charcount = strlen($b64scenario);
+                $padcount = $b64charcount - ($b64charcount % 4) + 4;
+                $b64scenarioPadded = str_pad($b64scenario,$padcount,"=",STR_PAD_RIGHT);
+                echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", $b64scenarioPadded, "</span></p>";
                 echo "<p>Base64 info decoded ", $scenario, "</p>";
               }
             ?>
@@ -103,7 +116,10 @@
                 $prettyscenario = "{\n&emsp;\"url\": \"" . $actual_link . "\",\n&emsp;\"method\": \"POST\",\n&emsp;\"parameters\": [\n" . rtrim(rtrim($postparamsjsonpretty, "\n"), ",") . "\n&emsp;]\n}";
                 echo "<p>JSON representation of URL data<br /><pre class=\".code-card\">", $prettyscenario, "</pre></p>";
                 $b64scenario = base64url_encode($scenario);
-                echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", str_pad($b64scenario,(count_chars($b64scenario) % 4),"=",STR_PAD_RIGHT), "</span></p>";
+                $b64charcount = strlen($b64scenario);
+                $padcount = $b64charcount - ($b64charcount % 4) + 4;
+                $b64scenarioPadded = str_pad($b64scenario,$padcount,"=",STR_PAD_RIGHT);
+                echo "<p>Base64 URL Safe encoding if this scenario data<br /><span>", $b64scenarioPadded, "</span></p>";
                 echo "<p>Base64 info decoded ", $scenario, "</p>";
               }
             ?>
