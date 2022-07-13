@@ -53,7 +53,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 mx-auto"  style="word-wrap: break-word;">
-          <p>Request Headers:<br />
+          <p info="headers">Request Headers:<br />
             <ul>
             <?php
               $headers =  getallheaders();
@@ -63,7 +63,7 @@
             ?>
             </ul>
           </p>
-          <p>Cookie Info:<br />
+          <p info="cookies">Cookie Info:<br />
             <ul>
               <?php
                 foreach ($_COOKIE as $key=>$val)
@@ -73,7 +73,7 @@
               ?>
             </ul>
           </p>
-          <p>GET Parameters Received:<br />
+          <p info="get">GET Parameters Received:<br />
             <ul>
             <?php
               $getparams = FALSE;
@@ -99,7 +99,7 @@
               }
             ?>
           </p>
-          <p>POST Parameters Received:<br />
+          <p info="post">POST Parameters Received:<br />
             <ul>
             <?php
               $postparams = FALSE;
