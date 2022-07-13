@@ -70,7 +70,7 @@
               <?php
                 foreach ($_COOKIE as $key=>$val)
                   {
-                    echo '<li>'.$key.' = '.$val.'</li>\n';
+                    echo '<li>'.$key.' = '.$val.'</li>';
                   }
               ?>
             </ul>
